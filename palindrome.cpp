@@ -24,14 +24,15 @@ bool isPalindrome(string argInput);
 int main() {
 	string userString;
 
-	cout << "Enter a string";
+	cout << "Enter a string: ";
 	getline(cin, userString);
 
 	if (isPalindrome(userString)) {
 		cout << "This word is a palindrome" << endl;
 	}
-	cout << "This word is NOT a palindrome" << endl;
-
+	else {
+		cout << "This word is NOT a palindrome" << endl;
+	}
 	return 0;
 }
 
@@ -39,6 +40,7 @@ bool isPalindrome(string argInput) {
 	stack<char>c;
 
 	for (int i = 0; i < argInput.size(); i++) {
+		argInput[i] = tolower(argInput[i]);
 		c.push(argInput[i]);
 	}
 
